@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="480"
+        d:DesignHeight="320"
+        x:Class="AltController.MainWindow"
+        Width="480"
+        Height="320"
+        Title="Alt Controller">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_New">
+                <MenuItem.Icon>
+                </MenuItem.Icon>
+                <Image Source="Images/page_save.png"/>
+                </MenuItem>
+                <MenuItem Header="_Open..." />
+                <Separator />
+                <MenuItem Header="_Save">
+                    <MenuItem.Icon />
+                </MenuItem>
+                <MenuItem Header="_Save As..." />
+                <Separator />
+                <MenuItem Header="_Exit" />
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem Header="Edit _Profile..." />
+                <MenuItem Header="Edit _Screen Regions..." />
+            </MenuItem>
+            <MenuItem Header="_View">
+                <MenuItem Header="Profile _Summary..." />
+                <MenuItem Header="Profile _Notes..." />
+                <Separator />
+                <MenuItem Header="Draw screen regions">
+                    <MenuItem.Icon>
+                        <CheckBox BorderThickness="2"
+                                  IsHitTestVisible="False" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Show region names">
+                    <MenuItem.Icon>
+                        <CheckBox BorderThickness="2"
+                                  IsHitTestVisible="False" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Draw pointer indicator">
+                    <MenuItem.Icon>
+                        <CheckBox BorderThickness="2"
+                                  IsHitTestVisible="False" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Show mode/page overlay">
+                    <MenuItem.Icon>
+                        <CheckBox BorderThickness="2"
+                                  IsHitTestVisible="False" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Tools">
+                <MenuItem Header="Options..." />
+            </MenuItem>
+            <MenuItem Header="_Help">
+                <MenuItem Header="Online help..." />
+                <MenuItem Header="Log information..." />
+                <MenuItem Header="About Alt Controller..." />
+            </MenuItem>
+        </Menu>
+        <TextBlock />
+    </DockPanel>
+</Window>
