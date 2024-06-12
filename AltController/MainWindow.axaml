@@ -9,30 +9,61 @@
         Width="480"
         Height="320"
         Title="Alt Controller">
-    <DockPanel>
+	<DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
                 <MenuItem Header="_New">
                 <MenuItem.Icon>
+					<PathIcon Data="{StaticResource document_regular}"></PathIcon>
                 </MenuItem.Icon>
-                <Image Source="Images/page_save.png"/>
+					
                 </MenuItem>
-                <MenuItem Header="_Open..." />
+				<MenuItem Header="_Open...">
+					<MenuItem.Icon>
+						<PathIcon Data="{StaticResource folder_open_regular}"></PathIcon>
+					</MenuItem.Icon>
+				</MenuItem>
                 <Separator />
                 <MenuItem Header="_Save">
-                    <MenuItem.Icon />
+					<MenuItem.Icon>
+						<PathIcon Data="{StaticResource save_regular}"></PathIcon>
+					</MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="_Save As..." />
+				<MenuItem Header="_Save As...">
+					<MenuItem.Icon>
+						<PathIcon Data="{StaticResource save_as_regular}"></PathIcon>
+					</MenuItem.Icon>					
+				</MenuItem>
                 <Separator />
-                <MenuItem Header="_Exit" />
+				<MenuItem Header="_Exit">
+					<MenuItem.Icon>
+						<PathIcon Data="{StaticResource pane_close_regular}"></PathIcon>
+					</MenuItem.Icon>
+				</MenuItem>
             </MenuItem>
             <MenuItem Header="_Edit">
-                <MenuItem Header="Edit _Profile..." />
-                <MenuItem Header="Edit _Screen Regions..." />
+				<MenuItem Header="Edit _Profile...">
+					<MenuItem.Icon>
+						<PathIcon Data="{StaticResource document_edit_regular}"></PathIcon>
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem Header="Edit _Screen Regions...">
+					<MenuItem.Icon>
+						<PathIcon Data="{StaticResource slide_layout_regular}"></PathIcon>
+					</MenuItem.Icon>
+				</MenuItem>
             </MenuItem>
             <MenuItem Header="_View">
-                <MenuItem Header="Profile _Summary..." />
-                <MenuItem Header="Profile _Notes..." />
+				<MenuItem Header="Profile _Summary...">
+					<MenuItem.Icon>
+						<PathIcon Data="{StaticResource text_bullet_list_regular}"></PathIcon>
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem Header="Profile _Notes...">
+					<MenuItem.Icon>
+						<PathIcon Data="{StaticResource notebook_regular}"></PathIcon>
+					</MenuItem.Icon>
+				</MenuItem>
                 <Separator />
                 <MenuItem Header="Draw screen regions">
                     <MenuItem.Icon>
@@ -60,12 +91,28 @@
                 </MenuItem>
             </MenuItem>
             <MenuItem Header="_Tools">
-                <MenuItem Header="Options..." />
+				<MenuItem Header="Options...">
+					<MenuItem.Icon>
+						<PathIcon Data="{StaticResource options_regular}"></PathIcon>
+					</MenuItem.Icon>
+				</MenuItem>
             </MenuItem>
             <MenuItem Header="_Help">
-                <MenuItem Header="Online help..." />
-                <MenuItem Header="Log information..." />
-                <MenuItem Header="About Alt Controller..." />
+				<MenuItem Header="Online help...">
+					<MenuItem.Icon>
+						<PathIcon Data="{StaticResource chat_help_regular}"></PathIcon>
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem Header="Log information...">
+					<MenuItem.Icon>
+						<PathIcon Data="{StaticResource send_logging_regular}"></PathIcon>
+					</MenuItem.Icon>
+				</MenuItem>
+				<MenuItem Header="About Alt Controller...">
+					<MenuItem.Icon>
+						<PathIcon Data="{StaticResource info_regular}"></PathIcon>
+					</MenuItem.Icon>
+				</MenuItem>
             </MenuItem>
         </Menu>
         <TextBlock />
