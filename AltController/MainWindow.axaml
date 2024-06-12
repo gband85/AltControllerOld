@@ -8,7 +8,8 @@
         x:Class="AltController.MainWindow"
         Width="480"
         Height="320"
-        Title="Alt Controller">
+        Title="Alt Controller"
+		Icon="Images/AltController.png">
 	<DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="_File">
