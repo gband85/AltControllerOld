@@ -2,118 +2,193 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d"
-        d:DesignWidth="480"
-        d:DesignHeight="320"
+        xmlns:lang="clr-namespace:AltController.Lang"
+        xmlns:local="clr-namespace:AltController"
+        xmlns:ac="clr-namespace:AltController"
+        xmlns:mi="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AltController.MainWindow"
+        Title="AltController"
         Width="480"
         Height="320"
-        Title="Alt Controller"
-		Icon="Images/AltController.png">
-	<DockPanel>
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="_File">
-                <MenuItem Header="_New">
-                <MenuItem.Icon>
-					<PathIcon Data="{StaticResource document_regular}"></PathIcon>
-                </MenuItem.Icon>
-					
+        Icon="/Images/AltController.png">
+    <!-- <Window.CommandBindings> -->
+    <!-- 	<CommandBinding Command="New" CanExecute="NewCanExecute" Executed="NewExecuted" /> -->
+    <!-- 	<CommandBinding Command="Open" CanExecute="OpenCanExecute" Executed="OpenExecuted" /> -->
+    <!-- 	<CommandBinding Command="Save" CanExecute="SaveCanExecute" Executed="SaveExecuted" /> -->
+    <!-- 	<CommandBinding Command="SaveAs" CanExecute="SaveAsCanExecute" Executed="SaveAsExecuted" /> -->
+    <!-- 	<CommandBinding Command="Close" CanExecute="CloseCanExecute" Executed="CloseExecuted" /> -->
+    <!-- 	<CommandBinding Command="{x:Static ac:MainWindow.OpenCustomWindow1}" Executed="OpenCustomWindow_Executed"/> -->
+    <!-- 	<CommandBinding Command="{x:Static ac:MainWindow.OpenCustomWindow2}" Executed="OpenCustomWindow_Executed"/> -->
+    <!-- 	<CommandBinding Command="{x:Static ac:MainWindow.OpenCustomWindow3}" Executed="OpenCustomWindow_Executed"/> -->
+    <!-- 	<CommandBinding Command="{x:Static ac:MainWindow.OpenCustomWindow4}" Executed="OpenCustomWindow_Executed"/> -->
+    <!-- 	<CommandBinding Command="{x:Static ac:MainWindow.OpenAllCustomWindows}" Executed="OpenAllCustomWindows_Executed"/> -->
+    <!-- </Window.CommandBindings> -->
+    <DockPanel>
+        <Menu Name="MainMenu" Grid.Row="0" Height="23" DockPanel.Dock="Top">
+
+            <MenuItem Name="FileMenu" Header="{x:Static lang:Resources.Main_FileMenu}">
+                <MenuItem Name="FileNew" Header="{x:Static lang:Resources.Main_FileNew}">
+                    <MenuItem.Icon>
+                        <mi:MaterialIcon Kind="FileDocumentPlusOutline" />
+                    </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_FileNewToolTip}"></ToolTip>
+                    </ToolTip.Tip>
                 </MenuItem>
-				<MenuItem Header="_Open...">
-					<MenuItem.Icon>
-						<PathIcon Data="{StaticResource folder_open_regular}"></PathIcon>
-					</MenuItem.Icon>
-				</MenuItem>
+                <MenuItem Name="FileOpen" Header="{x:Static lang:Resources.Main_FileOpen}">
+                    <MenuItem.Icon>
+                        <mi:MaterialIcon Kind="FolderOpenOutline" />
+                    </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_FileOpenToolTip}"></ToolTip>
+                    </ToolTip.Tip>
+                </MenuItem>
                 <Separator />
-                <MenuItem Header="_Save">
-					<MenuItem.Icon>
-						<PathIcon Data="{StaticResource save_regular}"></PathIcon>
-					</MenuItem.Icon>
+                <MenuItem Name="FileSave" Header="{x:Static lang:Resources.Main_FileSave}">
+                    <MenuItem.Icon>
+                        <mi:MaterialIcon Kind="ContentSaveOutline" />
+                    </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_FileSaveToolTip}"></ToolTip>
+                    </ToolTip.Tip>
                 </MenuItem>
-				<MenuItem Header="_Save As...">
-					<MenuItem.Icon>
-						<PathIcon Data="{StaticResource save_as_regular}"></PathIcon>
-					</MenuItem.Icon>					
-				</MenuItem>
+                <MenuItem Name="FileSaveAs" Header="{x:Static lang:Resources.Main_FileSaveAs}">
+                    <MenuItem.Icon>
+                        <mi:MaterialIcon Kind="ContentSavePlusOutline" />
+                    </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_FileSaveAsToolTip}"></ToolTip>
+                    </ToolTip.Tip>
+                </MenuItem>
                 <Separator />
-				<MenuItem Header="_Exit">
-					<MenuItem.Icon>
-						<PathIcon Data="{StaticResource pane_close_regular}"></PathIcon>
-					</MenuItem.Icon>
-				</MenuItem>
+                <MenuItem Name="FileClose" Header="{x:Static lang:Resources.Main_FileClose}">
+                    <MenuItem.Icon>
+                        <mi:MaterialIcon Kind="CloseThick" />
+                    </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_FileCloseToolTip}"></ToolTip>
+                    </ToolTip.Tip>
+                </MenuItem>
             </MenuItem>
-            <MenuItem Header="_Edit">
-				<MenuItem Header="Edit _Profile...">
-					<MenuItem.Icon>
-						<PathIcon Data="{StaticResource document_edit_regular}"></PathIcon>
-					</MenuItem.Icon>
-				</MenuItem>
-				<MenuItem Header="Edit _Screen Regions...">
-					<MenuItem.Icon>
-						<PathIcon Data="{StaticResource slide_layout_regular}"></PathIcon>
-					</MenuItem.Icon>
-				</MenuItem>
+            <MenuItem Name="EditMenu" Header="{x:Static lang:Resources.Main_EditMenu}">
+                <MenuItem Name="EditProfile" Header="{x:Static lang:Resources.Main_EditProfile}">
+                    <MenuItem.Icon>
+                        <mi:MaterialIcon Kind="AccountCogOutline" />
+                    </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_EditProfileToolTip}"></ToolTip>
+                    </ToolTip.Tip>
+                </MenuItem>
+                <MenuItem Name="EditScreenRegions" Header="{x:Static lang:Resources.Main_EditScreenRegions}">
+                    <MenuItem.Icon>
+                        <mi:MaterialIcon Kind="TableEdit" />
+                    </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_EditScreenRegionsToolTip}"></ToolTip>
+                    </ToolTip.Tip>
+                </MenuItem>
             </MenuItem>
-            <MenuItem Header="_View">
-				<MenuItem Header="Profile _Summary...">
-					<MenuItem.Icon>
-						<PathIcon Data="{StaticResource text_bullet_list_regular}"></PathIcon>
-					</MenuItem.Icon>
-				</MenuItem>
-				<MenuItem Header="Profile _Notes...">
-					<MenuItem.Icon>
-						<PathIcon Data="{StaticResource notebook_regular}"></PathIcon>
-					</MenuItem.Icon>
-				</MenuItem>
+            <MenuItem Name="ViewMenu" Header="{x:Static lang:Resources.Main_ViewMenu}">
+                <MenuItem Name="ViewProfileSummary" Header="{x:Static lang:Resources.Main_ViewProfileSummary}">
+                    <MenuItem.Icon>
+                        <mi:MaterialIcon Kind="TableLarge" />
+                    </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_ViewProfileSummaryToolTip}"></ToolTip>
+                    </ToolTip.Tip>
+                </MenuItem>
+                <MenuItem Name="ViewProfileNotes" Header="{x:Static lang:Resources.Main_ViewProfileNotes}">
+                    <MenuItem.Icon>
+                        <mi:MaterialIcon Kind="Text" />
+                    </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_ViewProfileNotesToolTip}"></ToolTip>
+                    </ToolTip.Tip>
+                </MenuItem>
                 <Separator />
-                <MenuItem Header="Draw screen regions">
+                <MenuItem Name="ViewDrawScreenRegions" Header="{x:Static lang:Resources.Main_ViewDrawScreenRegions}">
                     <MenuItem.Icon>
-                        <CheckBox BorderThickness="2"
+                        <CheckBox BorderThickness="0"
                                   IsHitTestVisible="False" />
                     </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_ViewDrawScreenRegionsToolTip}"></ToolTip>
+                    </ToolTip.Tip>
                 </MenuItem>
-                <MenuItem Header="Show region names">
+                <MenuItem Name="ViewShowScreenRegionNames"
+                          Header="{x:Static lang:Resources.Main_ViewDrawScreenRegionNames}">
                     <MenuItem.Icon>
-                        <CheckBox BorderThickness="2"
+                        <CheckBox BorderThickness="0"
                                   IsHitTestVisible="False" />
                     </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_ViewDrawScreenRegionNamesToolTip}"></ToolTip>
+                    </ToolTip.Tip>
                 </MenuItem>
-                <MenuItem Header="Draw pointer indicator">
+                <MenuItem Name="ViewDrawPointerIndicator"
+                          Header="{x:Static lang:Resources.Main_ViewDrawPointerIndicator}">
                     <MenuItem.Icon>
-                        <CheckBox BorderThickness="2"
-                                  IsHitTestVisible="False" />
+                        <CheckBox IsHitTestVisible="False" />
                     </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_ViewDrawPointerIndicatorToolTip}"></ToolTip>
+                    </ToolTip.Tip>
                 </MenuItem>
-                <MenuItem Header="Show mode/page overlay">
+                <MenuItem Name="ViewDrawStateOverlay" Header="{x:Static lang:Resources.Main_ViewDrawStateOverlay}">
                     <MenuItem.Icon>
-                        <CheckBox BorderThickness="2"
+                        <CheckBox BorderThickness="0"
                                   IsHitTestVisible="False" />
                     </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_ViewDrawStateOverlayToolTip}"></ToolTip>
+                    </ToolTip.Tip>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="_Tools">
-				<MenuItem Header="Options...">
-					<MenuItem.Icon>
-						<PathIcon Data="{StaticResource options_regular}"></PathIcon>
-					</MenuItem.Icon>
-				</MenuItem>
+            <MenuItem Name="ToolsMenu" Header="{x:Static lang:Resources.Main_ToolsMenu}">
+                <MenuItem Name="ToolsOptions" Header="{x:Static lang:Resources.Main_ToolsOptions}">
+                    <MenuItem.Icon>
+                        <mi:MaterialIcon Kind="Cogs" />
+                    </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_ToolsOptionsToolTip}"></ToolTip>
+                    </ToolTip.Tip>
+                </MenuItem>
             </MenuItem>
-            <MenuItem Header="_Help">
-				<MenuItem Header="Online help...">
-					<MenuItem.Icon>
-						<PathIcon Data="{StaticResource chat_help_regular}"></PathIcon>
-					</MenuItem.Icon>
-				</MenuItem>
-				<MenuItem Header="Log information...">
-					<MenuItem.Icon>
-						<PathIcon Data="{StaticResource send_logging_regular}"></PathIcon>
-					</MenuItem.Icon>
-				</MenuItem>
-				<MenuItem Header="About Alt Controller...">
-					<MenuItem.Icon>
-						<PathIcon Data="{StaticResource info_regular}"></PathIcon>
-					</MenuItem.Icon>
-				</MenuItem>
+            <!-- <MenuItem Name="WindowMenu" Header="{x:Static lang:Resources.Main_WindowMenu}"> -->
+            <!-- 	<Separator/> -->
+            <!-- 	<MenuItem Name="WindowShowTitleBars" Header="{x:Static lang:Resources.Main_WindowShowTitleBars}" > -->
+            <!-- 		<ToolTip.Tip> -->
+            <!-- 			<ToolTip Content="{x:Static lang:Resources.Main_WindowShowTitleBarsToolTip}"></ToolTip> -->
+            <!-- 		</ToolTip.Tip> -->
+            <!-- 	</MenuItem> -->
+            <!-- </MenuItem> -->
+            <MenuItem Name="HelpMenu" Header="{x:Static lang:Resources.Main_HelpMenu}" HorizontalAlignment="Right">
+                <MenuItem Name="HelpUserGuide" Header="{x:Static lang:Resources.Main_HelpUserGuide}">
+                    <MenuItem.Icon>
+                        <mi:MaterialIcon Kind="HelpCircleOutline" />
+                    </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_HelpUserGuideToolTip}"></ToolTip>
+                    </ToolTip.Tip>
+                </MenuItem>
+                <MenuItem Name="HelpEventLog" Header="{x:Static lang:Resources.Main_HelpEventLog}">
+                    <MenuItem.Icon>
+                        <mi:MaterialIcon Kind="WrenchOutline" />
+                    </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_HelpEventLogToolTip}"></ToolTip>
+                    </ToolTip.Tip>
+                </MenuItem>
+                <Separator />
+                <MenuItem Name="HelpAbout" Header="{x:Static lang:Resources.Main_HelpAbout}">
+                    <MenuItem.Icon>
+                        <mi:MaterialIcon Kind="InformationOutline" />
+                    </MenuItem.Icon>
+                    <ToolTip.Tip>
+                        <ToolTip Content="{x:Static lang:Resources.Main_HelpAboutToolTip}"></ToolTip>
+                    </ToolTip.Tip>
+                </MenuItem>
             </MenuItem>
         </Menu>
         <TextBlock />
