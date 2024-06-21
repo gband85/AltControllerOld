@@ -12,13 +12,15 @@ namespace AltController
         public MainWindow()
         {
             InitializeComponent();
+            var _FileOpen = this.FindControl<MenuItem>("FileOpen");
+            _FileOpen.Click += OpenExecuted;
         }
                 /// <summary>
         /// File Open
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        public void OpenExecuted(object sender,Avalonia.Interactivity.RoutedEventArgs e)
+        private void OpenExecuted(object sender,Avalonia.Interactivity.RoutedEventArgs e)
         {
             try
             {
@@ -28,33 +30,32 @@ namespace AltController
                 // MessageBoxResult result = MessageBoxResult.None;
                 // if (_profileChanged)
                 // {
-                    MessageBoxManager.GetMessageBoxStandard(
-                        //Properties.Resources.String_Save_profile_description,
-                        //Properties.Resources.String_Save_profile_title,
-                        "Test", "Want to save?",
+                 var box =   MessageBoxManager.GetMessageBoxStandard(
+                        Lang.Resources.String_Save_profile_description,
+                        Lang.Resources.String_Save_profile_title,
                         ButtonEnum.YesNoCancel);
-                                                            
-                                                        //MessageBoxImage.Question);
-                //     if (result == MessageBoxResult.Yes)
-                //     {
-                //         this.SaveExecuted(sender, e);
-                //     }
-                // }
+                 box.ShowWindowAsync();
+                 //MessageBoxImage.Question);
+                 //     if (result == MessageBoxResult.Yes)
+                 //     {
+                 //         this.SaveExecuted(sender, e);
+                 //     }
+                 // }
 
-                // if (result != MessageBoxResult.Cancel)
-                // {
-                //     Avalonia.Controls.Window dialog = new Avalonia.Controls.Window();
-                //     string defaultProfilesFolder = Path.Combine(AppConfig.UserDataDir, Constants.ProfilesFolderName);
-                //     dialog.InitialDirectory = _appConfig.GetStringVal(Constants.ConfigProfilesDir, defaultProfilesFolder);
-                //     dialog.Multiselect = false;
-                //     dialog.Filter = Properties.Resources.String_Profile_files_filter;
-                //     dialog.CheckFileExists = true;
-                //     if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-                //     {
-                //         // Load the selected profile
-                //         LoadProfile(dialog.FileName);
-                //     }
-                // }
+                 // if (result != MessageBoxResult.Cancel)
+                 // {
+                 //     Avalonia.Controls.Window dialog = new Avalonia.Controls.Window();
+                 //     string defaultProfilesFolder = Path.Combine(AppConfig.UserDataDir, Constants.ProfilesFolderName);
+                 //     dialog.InitialDirectory = _appConfig.GetStringVal(Constants.ConfigProfilesDir, defaultProfilesFolder);
+                 //     dialog.Multiselect = false;
+                 //     dialog.Filter = Properties.Resources.String_Profile_files_filter;
+                 //     dialog.CheckFileExists = true;
+                 //     if (dialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                 //     {
+                 //         // Load the selected profile
+                 //         LoadProfile(dialog.FileName);
+                 //     }
+                 // }
             }
             catch (Exception ex)
             {

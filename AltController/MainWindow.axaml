@@ -3,14 +3,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:lang="clr-namespace:AltController.Lang"
+        xmlns:gb="using:GroupBox.Avalonia.Controls"
         xmlns:local="clr-namespace:AltController"
         xmlns:ac="clr-namespace:AltController"
         xmlns:mi="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="AltController.MainWindow"
         Title="AltController"
-        Width="480"
-        Height="320"
+        Width="345"
+        Height="245"
         Icon="/Images/AltController.png">
     <!-- <Window.CommandBindings> -->
     <!-- 	<CommandBinding Command="New" CanExecute="NewCanExecute" Executed="NewExecuted" /> -->
@@ -24,9 +25,18 @@
     <!-- 	<CommandBinding Command="{x:Static ac:MainWindow.OpenCustomWindow4}" Executed="OpenCustomWindow_Executed"/> -->
     <!-- 	<CommandBinding Command="{x:Static ac:MainWindow.OpenAllCustomWindows}" Executed="OpenAllCustomWindows_Executed"/> -->
     <!-- </Window.CommandBindings> -->
-    <DockPanel>
-        <Menu Name="MainMenu" Grid.Row="0" Height="23" DockPanel.Dock="Top">
-
+    <!-- <DockPanel> -->
+    <Window.Styles>
+        <Style Selector="DockPanel.main-menu">
+            <Setter Property="Background" Value="LightGray"/>
+        </Style>
+        <Style Selector="TextBlock.df">
+            <Setter Property="FontStyle" Value="Italic"/>
+        </Style>
+    </Window.Styles>
+    <Grid RowDefinitions="23,65,*">
+        <DockPanel Classes="main-menu">
+                    <Menu Name="MainMenu" Grid.Row="0" DockPanel.Dock="Top" Height="23" Padding="2">
             <MenuItem Name="FileMenu" Header="{x:Static lang:Resources.Main_FileMenu}">
                 <MenuItem Name="FileNew" Header="{x:Static lang:Resources.Main_FileNew}">
                     <MenuItem.Icon>
@@ -36,7 +46,7 @@
                         <ToolTip Content="{x:Static lang:Resources.Main_FileNewToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
-                <MenuItem Name="FileOpen" Header="{x:Static lang:Resources.Main_FileOpen}">
+                <MenuItem Name="FileOpen" Header="{x:Static lang:Resources.Main_FileOpen}" Click="OpenExecuted">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="FolderOpenOutline" />
                     </MenuItem.Icon>
@@ -191,6 +201,35 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        <TextBlock />
-    </DockPanel>
+        </DockPanel>
+
+        <gb:GroupBox Name="CurrentStateGroupBox" Grid.Row="1" Header="{x:Static lang:Resources.Main_CurrentStateGroupBox}" Margin="5" VerticalAlignment="Top" Theme="{StaticResource GroupBoxClassic}">
+            <Grid Margin="5">                
+                <TextBlock VerticalAlignment="Center" Name="ProfileLabel" TextTrimming="CharacterEllipsis"/>
+            </Grid>
+        </gb:GroupBox>
+        <gb:GroupBox Name="CurrentActionsGroupBox" Grid.Row="2" Header="{x:Static lang:Resources.Main_CurrentActionsGroupBox}" Margin="5" VerticalAlignment="Top" Theme="{StaticResource GroupBoxClassic}" >
+            <Grid Margin="5" RowDefinitions="25,25,25" ColumnDefinitions="50,*">
+                <TextBlock Name="ModeLabel" Text="{x:Static lang:Resources.String_ModeLabel}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"></TextBlock>
+                <TextBlock VerticalAlignment="Center" Name="ModeName" Grid.Row="0" Grid.Column="1">Default</TextBlock>
+                <TextBlock Name="AppLabel" Text="{x:Static lang:Resources.String_AppLabel}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"></TextBlock>
+                <TextBlock VerticalAlignment="Center" Name="AppName" Grid.Row="1" Grid.Column="1">Default</TextBlock>
+                <TextBlock Name="PageLabel" Text="{x:Static lang:Resources.String_PageLabel}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"></TextBlock>
+                <TextBlock VerticalAlignment="Center" Name="PageName" Grid.Row="2" Grid.Column="1">Default</TextBlock>
+            </Grid>
+        </gb:GroupBox>
+        <TextBlock x:Name="InfoMessage" Grid.Row="2" VerticalAlignment="Bottom" Margin="5" FontStyle="Italic"/>
+        <Grid Name="AboutPanel" VerticalAlignment="Bottom" Grid.Row="2" Margin="5">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                <TextBlock Name="DevelopedForLabel" Text="{x:Static lang:Resources.Main_DevelopedForLabel}" FontStyle="Italic"/>
+                <Button Name="InfoButton" Margin="5,0" Content="{x:Static lang:Resources.Main_InfoButton}" FontStyle="Italic" Foreground="Blue">
+                    <!-- <Button.Template> -->
+                    <!--     <ControlTemplate TargetType="Button"> -->
+                    <!--         <ContentPresenter /> -->
+                    <!--     </ControlTemplate> -->
+                    <!-- </Button.Template> -->
+                </Button>
+            </StackPanel>
+        </Grid>
+        </Grid>
 </Window>
