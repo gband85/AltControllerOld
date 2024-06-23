@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:lang="clr-namespace:AltController.Lang"
+        xmlns:p="clr-namespace:AltController.Properties"
         xmlns:gb="using:GroupBox.Avalonia.Controls"
         xmlns:local="clr-namespace:AltController"
         xmlns:ac="clr-namespace:AltController"
@@ -37,192 +37,192 @@
     <Grid RowDefinitions="23,65,*">
         <DockPanel Classes="main-menu">
                     <Menu Name="MainMenu" Grid.Row="0" DockPanel.Dock="Top" Height="23" Padding="2">
-            <MenuItem Name="FileMenu" Header="{x:Static lang:Resources.Main_FileMenu}">
-                <MenuItem Name="FileNew" Header="{x:Static lang:Resources.Main_FileNew}">
+            <MenuItem Name="FileMenu" Header="{x:Static p:Resources.Main_FileMenu}">
+                <MenuItem Name="FileNew" Header="{x:Static p:Resources.Main_FileNew}">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="FileDocumentPlusOutline" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_FileNewToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_FileNewToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
-                <MenuItem Name="FileOpen" Header="{x:Static lang:Resources.Main_FileOpen}" Click="OpenExecuted">
+                <MenuItem Name="FileOpen" Header="{x:Static p:Resources.Main_FileOpen}" Click="OpenExecuted">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="FolderOpenOutline" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_FileOpenToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_FileOpenToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
                 <Separator />
-                <MenuItem Name="FileSave" Header="{x:Static lang:Resources.Main_FileSave}">
+                <MenuItem Name="FileSave" Header="{x:Static p:Resources.Main_FileSave}">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="ContentSaveOutline" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_FileSaveToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_FileSaveToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
-                <MenuItem Name="FileSaveAs" Header="{x:Static lang:Resources.Main_FileSaveAs}">
+                <MenuItem Name="FileSaveAs" Header="{x:Static p:Resources.Main_FileSaveAs}">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="ContentSavePlusOutline" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_FileSaveAsToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_FileSaveAsToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
                 <Separator />
-                <MenuItem Name="FileClose" Header="{x:Static lang:Resources.Main_FileClose}">
+                <MenuItem Name="FileClose" Header="{x:Static p:Resources.Main_FileClose}">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="CloseThick" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_FileCloseToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_FileCloseToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Name="EditMenu" Header="{x:Static lang:Resources.Main_EditMenu}">
-                <MenuItem Name="EditProfile" Header="{x:Static lang:Resources.Main_EditProfile}">
+            <MenuItem Name="EditMenu" Header="{x:Static p:Resources.Main_EditMenu}">
+                <MenuItem Name="EditProfile" Header="{x:Static p:Resources.Main_EditProfile}">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="AccountCogOutline" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_EditProfileToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_EditProfileToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
-                <MenuItem Name="EditScreenRegions" Header="{x:Static lang:Resources.Main_EditScreenRegions}">
+                <MenuItem Name="EditScreenRegions" Header="{x:Static p:Resources.Main_EditScreenRegions}">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="TableEdit" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_EditScreenRegionsToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_EditScreenRegionsToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Name="ViewMenu" Header="{x:Static lang:Resources.Main_ViewMenu}">
-                <MenuItem Name="ViewProfileSummary" Header="{x:Static lang:Resources.Main_ViewProfileSummary}">
+            <MenuItem Name="ViewMenu" Header="{x:Static p:Resources.Main_ViewMenu}">
+                <MenuItem Name="ViewProfileSummary" Header="{x:Static p:Resources.Main_ViewProfileSummary}">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="TableLarge" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_ViewProfileSummaryToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_ViewProfileSummaryToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
-                <MenuItem Name="ViewProfileNotes" Header="{x:Static lang:Resources.Main_ViewProfileNotes}">
+                <MenuItem Name="ViewProfileNotes" Header="{x:Static p:Resources.Main_ViewProfileNotes}">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="Text" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_ViewProfileNotesToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_ViewProfileNotesToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
                 <Separator />
-                <MenuItem Name="ViewDrawScreenRegions" Header="{x:Static lang:Resources.Main_ViewDrawScreenRegions}">
+                <MenuItem Name="ViewDrawScreenRegions" Header="{x:Static p:Resources.Main_ViewDrawScreenRegions}">
                     <MenuItem.Icon>
                         <CheckBox BorderThickness="0"
                                   IsHitTestVisible="False" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_ViewDrawScreenRegionsToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_ViewDrawScreenRegionsToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
                 <MenuItem Name="ViewShowScreenRegionNames"
-                          Header="{x:Static lang:Resources.Main_ViewDrawScreenRegionNames}">
+                          Header="{x:Static p:Resources.Main_ViewDrawScreenRegionNames}">
                     <MenuItem.Icon>
                         <CheckBox BorderThickness="0"
                                   IsHitTestVisible="False" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_ViewDrawScreenRegionNamesToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_ViewDrawScreenRegionNamesToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
                 <MenuItem Name="ViewDrawPointerIndicator"
-                          Header="{x:Static lang:Resources.Main_ViewDrawPointerIndicator}">
+                          Header="{x:Static p:Resources.Main_ViewDrawPointerIndicator}">
                     <MenuItem.Icon>
                         <CheckBox IsHitTestVisible="False" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_ViewDrawPointerIndicatorToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_ViewDrawPointerIndicatorToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
-                <MenuItem Name="ViewDrawStateOverlay" Header="{x:Static lang:Resources.Main_ViewDrawStateOverlay}">
+                <MenuItem Name="ViewDrawStateOverlay" Header="{x:Static p:Resources.Main_ViewDrawStateOverlay}">
                     <MenuItem.Icon>
                         <CheckBox BorderThickness="0"
                                   IsHitTestVisible="False" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_ViewDrawStateOverlayToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_ViewDrawStateOverlayToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Name="ToolsMenu" Header="{x:Static lang:Resources.Main_ToolsMenu}">
-                <MenuItem Name="ToolsOptions" Header="{x:Static lang:Resources.Main_ToolsOptions}">
+            <MenuItem Name="ToolsMenu" Header="{x:Static p:Resources.Main_ToolsMenu}">
+                <MenuItem Name="ToolsOptions" Header="{x:Static p:Resources.Main_ToolsOptions}">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="Cogs" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_ToolsOptionsToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_ToolsOptionsToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
             </MenuItem>
-            <!-- <MenuItem Name="WindowMenu" Header="{x:Static lang:Resources.Main_WindowMenu}"> -->
+            <!-- <MenuItem Name="WindowMenu" Header="{x:Static p:Resources.Main_WindowMenu}"> -->
             <!-- 	<Separator/> -->
-            <!-- 	<MenuItem Name="WindowShowTitleBars" Header="{x:Static lang:Resources.Main_WindowShowTitleBars}" > -->
+            <!-- 	<MenuItem Name="WindowShowTitleBars" Header="{x:Static p:Resources.Main_WindowShowTitleBars}" > -->
             <!-- 		<ToolTip.Tip> -->
-            <!-- 			<ToolTip Content="{x:Static lang:Resources.Main_WindowShowTitleBarsToolTip}"></ToolTip> -->
+            <!-- 			<ToolTip Content="{x:Static p:Resources.Main_WindowShowTitleBarsToolTip}"></ToolTip> -->
             <!-- 		</ToolTip.Tip> -->
             <!-- 	</MenuItem> -->
             <!-- </MenuItem> -->
-            <MenuItem Name="HelpMenu" Header="{x:Static lang:Resources.Main_HelpMenu}" HorizontalAlignment="Right">
-                <MenuItem Name="HelpUserGuide" Header="{x:Static lang:Resources.Main_HelpUserGuide}">
+            <MenuItem Name="HelpMenu" Header="{x:Static p:Resources.Main_HelpMenu}" HorizontalAlignment="Right">
+                <MenuItem Name="HelpUserGuide" Header="{x:Static p:Resources.Main_HelpUserGuide}">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="HelpCircleOutline" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_HelpUserGuideToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_HelpUserGuideToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
-                <MenuItem Name="HelpEventLog" Header="{x:Static lang:Resources.Main_HelpEventLog}">
+                <MenuItem Name="HelpEventLog" Header="{x:Static p:Resources.Main_HelpEventLog}">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="WrenchOutline" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_HelpEventLogToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_HelpEventLogToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
                 <Separator />
-                <MenuItem Name="HelpAbout" Header="{x:Static lang:Resources.Main_HelpAbout}">
+                <MenuItem Name="HelpAbout" Header="{x:Static p:Resources.Main_HelpAbout}">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="InformationOutline" />
                     </MenuItem.Icon>
                     <ToolTip.Tip>
-                        <ToolTip Content="{x:Static lang:Resources.Main_HelpAboutToolTip}"></ToolTip>
+                        <ToolTip Content="{x:Static p:Resources.Main_HelpAboutToolTip}"></ToolTip>
                     </ToolTip.Tip>
                 </MenuItem>
             </MenuItem>
         </Menu>
         </DockPanel>
 
-        <gb:GroupBox Name="CurrentStateGroupBox" Grid.Row="1" Header="{x:Static lang:Resources.Main_CurrentStateGroupBox}" Margin="5" VerticalAlignment="Top" Theme="{StaticResource GroupBoxClassic}">
+        <gb:GroupBox Name="CurrentStateGroupBox" Grid.Row="1" Header="{x:Static p:Resources.Main_CurrentStateGroupBox}" Margin="5" VerticalAlignment="Top" Theme="{StaticResource GroupBoxClassic}">
             <Grid Margin="5">                
                 <TextBlock VerticalAlignment="Center" Name="ProfileLabel" TextTrimming="CharacterEllipsis"/>
             </Grid>
         </gb:GroupBox>
-        <gb:GroupBox Name="CurrentActionsGroupBox" Grid.Row="2" Header="{x:Static lang:Resources.Main_CurrentActionsGroupBox}" Margin="5" VerticalAlignment="Top" Theme="{StaticResource GroupBoxClassic}" >
+        <gb:GroupBox Name="CurrentActionsGroupBox" Grid.Row="2" Header="{x:Static p:Resources.Main_CurrentActionsGroupBox}" Margin="5" VerticalAlignment="Top" Theme="{StaticResource GroupBoxClassic}" >
             <Grid Margin="5" RowDefinitions="25,25,25" ColumnDefinitions="50,*">
-                <TextBlock Name="ModeLabel" Text="{x:Static lang:Resources.String_ModeLabel}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"></TextBlock>
+                <TextBlock Name="ModeLabel" Text="{x:Static p:Resources.String_ModeLabel}" VerticalAlignment="Center" Grid.Row="0" Grid.Column="0"></TextBlock>
                 <TextBlock VerticalAlignment="Center" Name="ModeName" Grid.Row="0" Grid.Column="1">Default</TextBlock>
-                <TextBlock Name="AppLabel" Text="{x:Static lang:Resources.String_AppLabel}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"></TextBlock>
+                <TextBlock Name="AppLabel" Text="{x:Static p:Resources.String_AppLabel}" VerticalAlignment="Center" Grid.Row="1" Grid.Column="0"></TextBlock>
                 <TextBlock VerticalAlignment="Center" Name="AppName" Grid.Row="1" Grid.Column="1">Default</TextBlock>
-                <TextBlock Name="PageLabel" Text="{x:Static lang:Resources.String_PageLabel}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"></TextBlock>
+                <TextBlock Name="PageLabel" Text="{x:Static p:Resources.String_PageLabel}" VerticalAlignment="Center" Grid.Row="2" Grid.Column="0"></TextBlock>
                 <TextBlock VerticalAlignment="Center" Name="PageName" Grid.Row="2" Grid.Column="1">Default</TextBlock>
             </Grid>
         </gb:GroupBox>
         <TextBlock x:Name="InfoMessage" Grid.Row="2" VerticalAlignment="Bottom" Margin="5" FontStyle="Italic"/>
         <Grid Name="AboutPanel" VerticalAlignment="Bottom" Grid.Row="2" Margin="5">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                <TextBlock Name="DevelopedForLabel" Text="{x:Static lang:Resources.Main_DevelopedForLabel}" FontStyle="Italic"/>
-                <Button Name="InfoButton" Margin="5,0" Content="{x:Static lang:Resources.Main_InfoButton}" FontStyle="Italic" Foreground="Blue">
+                <TextBlock Name="DevelopedForLabel" Text="{x:Static p:Resources.Main_DevelopedForLabel}" FontStyle="Italic"/>
+                <Button Name="InfoButton" Margin="5,0" Content="{x:Static p:Resources.Main_InfoButton}" FontStyle="Italic" Foreground="Blue">
                     <!-- <Button.Template> -->
                     <!--     <ControlTemplate TargetType="Button"> -->
                     <!--         <ContentPresenter /> -->

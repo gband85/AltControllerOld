@@ -31,8 +31,8 @@ namespace AltController
                 // if (_profileChanged)
                 // {
                  var box =   MessageBoxManager.GetMessageBoxStandard(
-                        Lang.Resources.String_Save_profile_description,
-                        Lang.Resources.String_Save_profile_title,
+                       Properties.Resources.String_Save_profile_description,
+                        Properties.Resources.String_Save_profile_title,
                         ButtonEnum.YesNoCancel);
                  box.ShowWindowAsync();
                  //MessageBoxImage.Question);

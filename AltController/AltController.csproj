@@ -7,7 +7,7 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
     <RootNamespace>AltController</RootNamespace>
-    <AppDesignerFolder>Lang</AppDesignerFolder>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
   </PropertyGroup>
 
   <ItemGroup>
@@ -21,24 +21,21 @@
     <PackageReference Include="Material.Icons.Avalonia" Version="2.1.9" />
     <PackageReference Include="MessageBox.Avalonia" Version="3.1.5.1" />
   </ItemGroup>
-
   <ItemGroup>
-    <Compile Update="Lang\Resources.Designer.cs">
+    <AvaloniaResource Include="Images\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
-    <EmbeddedResource Update="Lang\Resources.resx">
+    <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <CustomToolNamespace></CustomToolNamespace>
     </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <AvaloniaResource Include="Images\**" />
   </ItemGroup>
 
 </Project>
