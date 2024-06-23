@@ -191,7 +191,7 @@
                     </ToolTip.Tip>
                 </MenuItem>
                 <Separator />
-                <MenuItem Name="HelpAbout" Header="{x:Static p:Resources.Main_HelpAbout}">
+                <MenuItem Name="HelpAbout" Header="{x:Static p:Resources.Main_HelpAbout}" Click="HelpAbout_Click">
                     <MenuItem.Icon>
                         <mi:MaterialIcon Kind="InformationOutline" />
                     </MenuItem.Icon>

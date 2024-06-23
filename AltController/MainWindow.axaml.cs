@@ -1,9 +1,10 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
-using Microsoft.VisualBasic;
+// using Microsoft.VisualBasic;
 using MsBox.Avalonia;
 using MsBox.Avalonia.Enums;
+using AltController.Core;
 
 namespace AltController
 {
@@ -12,8 +13,8 @@ namespace AltController
         public MainWindow()
         {
             InitializeComponent();
-            var _FileOpen = this.FindControl<MenuItem>("FileOpen");
-            _FileOpen.Click += OpenExecuted;
+            // var _FileOpen = this.FindControl<MenuItem>("FileOpen");
+            // _FileOpen.Click += OpenExecuted;
         }
                 /// <summary>
         /// File Open
@@ -63,6 +64,32 @@ namespace AltController
             }
 
             //e.Handled = true;
+        }
+        private void HelpUserGuide_Click(object sender, RoutedEventArgs e)
+        {
+            // ClearMessages();
+
+            try
+            {
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(Constants.UserGuideURL));
+            }
+            catch (Exception)
+            {
+            }
+            e.Handled = true;
+        }
+
+        /// <summary>
+        /// Show Help - About
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void HelpAbout_Click(object sender, RoutedEventArgs e)
+        {
+            // ClearMessages();
+            
+            HelpAboutWindow helpAbout = new HelpAboutWindow();
+            helpAbout.Show();
         }
     }
 }
